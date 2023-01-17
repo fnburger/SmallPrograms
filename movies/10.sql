@@ -1,0 +1,1 @@
+select distinct name from people left outer join directors on people.id = directors.person_id left outer join movies on directors.movie_id = movies.id left outer join ratings on movies.id = ratings.movie_id where rating>=9.0;

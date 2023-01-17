@@ -1,0 +1,1 @@
+select name from people where people.id in (select person_id from stars where movie_id in (select id from movies where movies.id in (select movies.id from movies left outer join stars on movies.id=stars.movie_id left outer join people on stars.person_id=people.id where name="Kevin Bacon" AND birth=1958))) AND name!="Kevin Bacon";

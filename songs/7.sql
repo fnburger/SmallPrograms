@@ -1,0 +1,1 @@
+select avg(songs.energy) from songs inner join artists on artists.id = songs.artist_id where artists.name="Drake";

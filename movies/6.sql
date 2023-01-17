@@ -1,0 +1,1 @@
+select AVG(rating) from ratings inner join movies on movie_id = id where year=2012;

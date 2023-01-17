@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>Which country has the most vending machines?</h3>
+                <p id="answer"></p>
+                <button id="b1">France</button>
+                <button id="b2">Japan</button>
+                <button id="b3">Russia</button>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>The last name of the Japanese politician assassinated on the 8th of July 2022 was...</h3>
+                <p id="answer1"></p>
+                <form>
+                    <input autocomplete="off" autofocus id="text" placeholder="..." type="text">
+                    <input type="submit" value="Check Answer">
+                </form>
+            </div>
+        </div>
+        <script>
+            function response(c, r)
+            {
+                document.querySelector('#text').style.backgroundColor = c;
+                let response = document.querySelector('#answer1');
+                response.innerHTML = r;
+            }
+            
+            function changeButtonColor(i, s)
+            {
+                document.querySelector(i).style.backgroundColor = s;
+                showMCResultText(s);
+            }
+
+            function showMCResultText(s)
+            {
+                let answer = document.querySelector('#answer');
+                if (s == 'red')
+                {
+                    answer.innerHTML = "Incorrect";
+                } else
+                {
+                    answer.innerHTML = "Correct!";
+                }
+            }
+            // Event Listeners
+            let body = document.querySelector('body');
+            body.querySelector('#b1').addEventListener('click', function(){changeButtonColor('#b1','red')});
+            body.querySelector('#b2').addEventListener('click', function(){changeButtonColor('#b2','green')});
+            body.querySelector('#b3').addEventListener('click', function(){changeButtonColor('#b3','red')});
+            document.querySelector('form').addEventListener('submit', function(e){
+                let ans = document.querySelector('#text').value;
+                if (ans.toLowerCase() == "abe")
+                {
+                    response("green", "Correct!");
+                } else
+                {
+                    response("red", "Incorrect");
+                }
+                e.preventDefault();
+            });
+        </script>
+    </body>
+</html>

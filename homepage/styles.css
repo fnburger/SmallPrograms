@@ -1,0 +1,65 @@
+*
+ {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+ }
+.active {
+    font-weight: bold;
+}
+
+.navbar {
+    margin: 10px;
+}
+
+.footie {
+    font-size: 12px;
+}
+
+.navbar-brand {
+    padding: 10px;
+}
+
+.row {
+    margin: 33px;
+}
+
+.carousel {
+    margin: 33px;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    min-height: 25vh;
+}
+
+section .text {
+    position: absolute;
+    user-select: none;
+    pointer-events: none;
+    animation: animate 10s linear infinite reverse;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+section .text span {
+    top: -100px;
+    position: absolute;
+    text-transform: uppercase;
+    display: inline-block;
+    transform-origin: 0 100px;
+}

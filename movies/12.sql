@@ -1,0 +1,1 @@
+select title from (select distinct title from movies inner join stars on movies.id = stars.movie_id inner join people on stars.person_id = people.id where name="Johnny Depp" union all select distinct title from movies inner join stars on movies.id = stars.movie_id inner join people on stars.person_id = people.id where name="Helena Bonham Carter") group by title having count(*)>1;
